@@ -37,6 +37,8 @@ html {
   width: 100%;
   padding: 3rem 0;
 
+  z-index: 999; /*Aqui deixo o header com o menu por cime de tudo*/
+
   transition: all 0.3s ease;
 }
 
@@ -60,7 +62,7 @@ html {
 
 .navbar .logo a span {
   color: var(--color-04);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /*Aqui estou colocando uma transição no momento da rolagem do scroll para baixo*/
 }
 
 .navbar.sticky .logo a span {
@@ -140,6 +142,11 @@ html {
   border-radius: 15rem;
   border: 0.1rem solid var(--color-02);
 }
+
+.home .home-content a:hover {
+  color: var(--color-04);
+  background: none;
+}
 /*FIM DA HOME*********************************************/
 
 /*INICIO DO MENU MOBILE****************************************/
@@ -151,6 +158,112 @@ html {
   display: none;
 }
 /*FIM DO MENU MOBILE****************************************/
+
+/*INICIO DO SOBRE****************************************/
+section {
+  padding: 100px 0;
+}
+
+.about .about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about .title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+
+  margin-bottom: 6rem;
+  padding-bottom: 2rem;
+
+  position: relative;
+}
+
+.about .title::before {
+  /*Criação do titulo do sobre*/
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 18rem;
+  height: 0.3rem;
+  background: var(--color-04);
+  transform: translateX(-50%);
+}
+
+.about .title::after {
+  /*Criação do titulo do sobre*/
+  content: 'Quem sou eu';
+  position: absolute;
+  bottom: -1.2rem;
+  left: 50%;
+  font-size: 2rem;
+  background: var(--color-02);
+  color: var(--color-04);
+  padding: 0.5rem;
+  transform: translateX(-50%);
+}
+
+.about .about-content .left {
+  width: 45%;
+}
+
+.about .about-content .right {
+  width: 55%;
+}
+
+.about .about-content .right .text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.about .about-content .right .text span {
+  color: var(--color-04);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.about .about-content .right a {
+  display: inline-block;
+  background: var(--color-04);
+  color: var(--color-02);
+
+  font-size: 2rem;
+  font-weight: 500;
+
+  padding: 1rem 3rem;
+  margin-top: 1rem;
+
+  border-radius: 20rem;
+  border: 0.2rem solid var(--color-04);
+
+  transition: all 0.3s ease;
+}
+
+.about .about-content .right a:hover {
+  color: var(--color-04);
+  background: none;
+}
+
+.about .about-content .right p {
+  text-align: justify;
+  font-size: 1.5rem;
+}
+
+.about .about-content .left img {
+  width: 400px;
+  height: 400px;
+
+  object-fit: cover;
+
+  border-radius: 0.8rem;
+}
+
+/*FIM DO SOBRE****************************************/
 
 /*INICIO DA RESPONSIVIDADE*************************************/
 @media (max-width: 1104px) {
@@ -176,6 +289,7 @@ html {
   }
 
   .navbar .menu {
+    /*Aqui está as configurações dos itens MENU quando estiver no mobile*/
     /*Criação do menu reponsivo*/
     position: fixed;
 
@@ -188,8 +302,6 @@ html {
 
     padding-top: 8rem;
     text-align: center;
-
-    display: none;
   }
 
   .navbar .menu.active {
