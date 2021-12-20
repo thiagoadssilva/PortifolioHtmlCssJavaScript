@@ -31,6 +31,44 @@ html {
 
 /*FIM DOS VALORES PADRÕES*********************************************/
 
+/*INICIO TODOS OS CÓDIGOS SIMILARES*/
+section {
+  padding: 100px 0;
+}
+
+section .title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+
+  margin-bottom: 6rem;
+  padding-bottom: 2rem;
+
+  position: relative;
+}
+
+section .title::before {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 18rem;
+  height: 0.3rem;
+  background: var(--color-04);
+  transform: translateX(-50%);
+}
+
+section .title::after {
+  position: absolute;
+  bottom: -1.2rem;
+  left: 50%;
+  font-size: 2rem;
+  background: var(--color-02);
+  color: var(--color-04);
+  padding: 0.5rem;
+  transform: translateX(-50%);
+}
+/*FIM TODOS OS CÓDIGOS SIMILARES*/
+
 /*INICIO DA NAVBAR*********************************************/
 .navbar {
   position: fixed;
@@ -67,7 +105,7 @@ html {
 
 .navbar.sticky .logo a span {
   /*Aqui estamos criando a classe que vai adicionar o background do HEADER no momento da rolagem*/
-  color: var(--color-03);
+  color: var(--color-02);
 }
 
 .navbar .menu li {
@@ -82,11 +120,11 @@ html {
   font-weight: 500;
   margin-left: 2.5rem;
 
-  transition: color 0.3s ease;
+  /*transition: color 0.1s ease;*/
 }
 
 .navbar .menu li a:hover {
-  color: var(--color-04);
+  border-bottom: solid 0.1rem var(--color-02);
 }
 
 .navbar.sticky .menu li a:hover {
@@ -98,7 +136,7 @@ html {
 /*INICIO DA HOME*********************************************/
 .home {
   display: flex;
-  background: url(image/01.jpg) no-repeat center;
+  background: url(image/04.jpg) no-repeat center;
   height: 100vh;
   color: var(--color-02);
   min-height: 500px;
@@ -124,7 +162,7 @@ html {
 }
 
 .home .home-content .text-3 span {
-  color: var(--color-04);
+  color: var(--color-02);
   font-weight: 500;
 }
 
@@ -144,7 +182,7 @@ html {
 }
 
 .home .home-content a:hover {
-  color: var(--color-04);
+  color: var(--color-02);
   background: none;
 }
 /*FIM DA HOME*********************************************/
@@ -160,51 +198,16 @@ html {
 /*FIM DO MENU MOBILE****************************************/
 
 /*INICIO DO SOBRE****************************************/
-section {
-  padding: 100px 0;
-}
-
-.about .about-content {
+.about .about-content,
+.services .serv-content {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 
-.about .title {
-  text-align: center;
-  font-size: 4rem;
-  font-weight: 500;
-
-  margin-bottom: 6rem;
-  padding-bottom: 2rem;
-
-  position: relative;
-}
-
-.about .title::before {
-  /*Criação do titulo do sobre*/
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 18rem;
-  height: 0.3rem;
-  background: var(--color-04);
-  transform: translateX(-50%);
-}
-
 .about .title::after {
-  /*Criação do titulo do sobre*/
   content: 'Quem sou eu';
-  position: absolute;
-  bottom: -1.2rem;
-  left: 50%;
-  font-size: 2rem;
-  background: var(--color-02);
-  color: var(--color-04);
-  padding: 0.5rem;
-  transform: translateX(-50%);
 }
 
 .about .about-content .left {
@@ -236,7 +239,7 @@ section {
   font-weight: 500;
 
   padding: 1rem 3rem;
-  margin-top: 1rem;
+  margin-top: 1.7rem;
 
   border-radius: 20rem;
   border: 0.2rem solid var(--color-04);
@@ -252,6 +255,7 @@ section {
 .about .about-content .right p {
   text-align: justify;
   font-size: 1.5rem;
+  color: var(--color-04);
 }
 
 .about .about-content .left img {
@@ -265,20 +269,53 @@ section {
 
 /*FIM DO SOBRE****************************************/
 
+/*INICIO DAS SKILLS****************************************/
+.services {
+  background: var(--color-04);
+  color: var(--color-04);
+}
+
+.services .title {
+  color: var(--color-02);
+}
+
+.services .title::after {
+  content: 'Minhas Abilidades';
+  background: none;
+  color: var(--color-02);
+}
+
+.services .serv-content .card .box img {
+  width: 50px;
+  height: 50px;
+}
+
+.services .serv-content .card {
+  width: calc(33% - 20px);
+  background: var(--color-02);
+  text-align: center;
+  border-radius: 0.6rem;
+  padding: 2rem 2.5rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+/*FIM DAS SKILLS****************************************/
+
 /*INICIO DA RESPONSIVIDADE*************************************/
-@media (max-width: 1104px) {
+@media (max-width: 1300px) {
   .navbar .max-width {
     margin-left: 0;
   }
 }
 
-/*@media (max-width: 991px) {
-  .navbar .max-width {
-    padding: 0 5rem;
+@media (max-width: 1104px) {
+  .about .about-content .left img {
+    width: 350px;
+    height: 350px;
   }
-}*/
+}
 
-@media (max-width: 1001px) {
+@media (max-width: 1000px) {
   .max-width {
     padding: 0 5rem;
   }
@@ -302,6 +339,8 @@ section {
 
     padding-top: 8rem;
     text-align: center;
+
+    display: none;
   }
 
   .navbar .menu.active {
@@ -317,22 +356,47 @@ section {
     font-size: 2.5rem;
   }
 
-  /*.home .home-content .text-2 {
-    font-size: 7rem;
+  .about .about-content .column {
+    width: 50%;
   }
-
-  .home .home-content .text-3 {
-    font-size: 3.5rem;
-  }*/
 }
 
-@media (max-width: 690px) {
+@media (max-width: 850px) {
+  .about .about-content .left img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .about .about-content .right a {
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .about .about-content .right a {
+    font-size: 1rem;
+    padding: 0.2rem 1rem;
+  }
+}
+
+@media (max-width: 700px) {
   .home .home-content .text-2 {
     font-size: 3rem;
   }
 
   .home .home-content .text-3 {
     font-size: 2rem;
+  }
+
+  .about .about-content .left {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 6rem;
+  }
+
+  .about .about-content .right {
+    flex: 100%;
   }
 }
 
