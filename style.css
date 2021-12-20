@@ -5,6 +5,8 @@
   --color-02: #fff;
   --color-03: #3a4d5e;
   --color-04: #000;
+  --color-05: #f0f0f0;
+  --color-06: #6665ee;
 }
 
 html {
@@ -270,6 +272,140 @@ section .title::after {
 /*FIM DO SOBRE****************************************/
 
 /*INICIO DAS SKILLS****************************************/
+
+/*INICIO DAS CONFIGURAÇÕES DO MAPA DAS SKILSS****************************************/
+.skills-bar {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  background: var(--color-02);
+
+  border-radius: 1rem;
+  box-shadow: 0.4rem 0.4rem 0.4rem var(--color-02);
+
+  padding: 1.5rem;
+}
+
+.skills-bar .bar {
+  margin: 0.5rem 0;
+}
+
+.skills-bar .bar .info {
+  margin-bottom: 2rem;
+}
+
+.skills-bar .bar .info span {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.skills-bar .bar .progress-line {
+  position: relative;
+  border-radius: 1rem;
+  height: 1rem;
+  width: 100%;
+  background: var(--color-05);
+
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.bar .progress-line span {
+  position: absolute;
+  border-radius: 1rem;
+  height: 100%;
+  background: var(--color-06);
+
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.progress-line.php span {
+  width: 50%;
+}
+
+.progress-line.scripcase span {
+  width: 80%;
+}
+.progress-line.html span {
+  width: 75%;
+}
+.progress-line.css span {
+  width: 65%;
+}
+
+.progress-line.javascript span {
+  width: 55%;
+}
+
+.progress-line.mysql span {
+  width: 60%;
+}
+
+.progress-line.jquery span {
+  width: 30%;
+}
+
+.bar .progress-line span::before {
+  position: absolute;
+  content: '';
+  right: 0;
+  top: -1rem;
+  height: 0;
+  width: 0;
+  border: 0.7rem solid transparent;
+  border-bottom-width: 0;
+  border-right-width: 0;
+  border-top-color: var(--color-04);
+}
+
+.bar .progress-line span::after {
+  position: absolute;
+  right: 0;
+  top: -2.8rem;
+  color: var(--color-02);
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: var(--color-04);
+  padding: 0.1rem 0.8rem;
+  border-radius: 0.3rem;
+}
+
+.progress-line.php span::after {
+  content: '50%';
+}
+
+.progress-line.scripcase span::after {
+  content: '80%';
+}
+.progress-line.html span::after {
+  content: '75%';
+}
+.progress-line.css span::after {
+  content: '65%';
+}
+.progress-line.javascript span::after {
+  content: '55%';
+}
+
+.progress-line.mysql span::after {
+  content: '60%';
+}
+
+.progress-line.jquery span::after {
+  content: '30%';
+}
+/*FIM DAS CONFIGURAÇÕES DO MAPA DAS SKILSS****************************************/
+
 .services {
   background: var(--color-04);
   color: var(--color-04);
@@ -280,7 +416,7 @@ section .title::after {
 }
 
 .services .title::after {
-  content: 'Minhas Abilidades';
+  content: 'Principais competências';
   background: none;
   color: var(--color-02);
 }
@@ -397,6 +533,22 @@ section .title::after {
 
   .about .about-content .right {
     flex: 100%;
+  }
+
+  .services .title::after {
+    content: 'Competências';
+  }
+
+  .skills-bar .bar .info {
+    margin-bottom: 2.6rem;
+  }
+
+  .about .title::after {
+    font-size: 1.8rem;
+  }
+
+  .home .home-content a {
+    font-size: 1.5rem;
   }
 }
 
