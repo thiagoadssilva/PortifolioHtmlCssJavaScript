@@ -322,7 +322,7 @@ section .title::after {
   position: absolute;
   border-radius: 1rem;
   height: 100%;
-  background: var(--color-06);
+  background: var(--color-04);
 
   transform: scaleX(0);
   transform-origin: left;
@@ -336,6 +336,7 @@ section .title::after {
 .progress-line.scripcase span {
   width: 80%;
 }
+
 .progress-line.html span {
   width: 75%;
 }
@@ -416,7 +417,7 @@ section .title::after {
 }
 
 .services .title::after {
-  content: 'Principais competências';
+  content: 'Competências';
   background: none;
   color: var(--color-02);
 }
