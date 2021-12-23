@@ -31,7 +31,7 @@ html {
   margin: auto;
 }
 
-/*FIM DOS VALORES PADRÕES*********************************************/
+/*FIM DOS VALORES PADRÕES******/
 
 /*INICIO TODOS OS CÓDIGOS SIMILARES*/
 section {
@@ -71,7 +71,7 @@ section .title::after {
 }
 /*FIM TODOS OS CÓDIGOS SIMILARES*/
 
-/*INICIO DA NAVBAR*********************************************/
+/*INICIO DA NAVBAR******/
 .navbar {
   position: fixed;
   width: 100%;
@@ -133,9 +133,9 @@ section .title::after {
   /*Aqui estamos criando a classe que vai adicionar o background do HEADER no momento da rolagem*/
   color: var(--color-03);
 }
-/*FIM DA NAVBAR*********************************************/
+/*FIM DA NAVBAR******/
 
-/*INICIO DA HOME*********************************************/
+/*INICIO DA HOME******/
 .home {
   display: flex;
   background: url(image/04.jpg) no-repeat center;
@@ -187,9 +187,9 @@ section .title::after {
   color: var(--color-02);
   background: none;
 }
-/*FIM DA HOME*********************************************/
+/*FIM DA HOME******/
 
-/*INICIO DO MENU MOBILE****************************************/
+/*INICIO DO MENU MOBILE*/
 .menu-btn {
   color: var(--color-02);
   font-size: 2.6rem;
@@ -197,9 +197,9 @@ section .title::after {
 
   display: none;
 }
-/*FIM DO MENU MOBILE****************************************/
+/*FIM DO MENU MOBILE*/
 
-/*INICIO DO SOBRE****************************************/
+/*INICIO DO SOBRE*/
 .about .about-content,
 .services .serv-content {
   display: flex;
@@ -269,176 +269,80 @@ section .title::after {
   border-radius: 0.8rem;
 }
 
-/*FIM DO SOBRE****************************************/
+/*FIM DO SOBRE*/
 
-/*INICIO DAS SKILLS****************************************/
-
-/*INICIO DAS CONFIGURAÇÕES DO MAPA DAS SKILSS****************************************/
-.skills-bar {
+/*INICIO DAS SKILLS*/
+.skills-content {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
-  width: 100%;
-  background: var(--color-02);
-
-  border-radius: 1rem;
-  box-shadow: 0.4rem 0.4rem 0.4rem var(--color-02);
-
-  padding: 1.5rem;
+  flex-wrap: wrap;
 }
 
-.skills-bar .bar {
-  margin: 0.5rem 0;
-}
-
-.skills-bar .bar .info {
-  margin-bottom: 2rem;
-}
-
-.skills-bar .bar .info span {
-  font-size: 1.7rem;
-  font-weight: 500;
-}
-
-.skills-bar .bar .progress-line {
-  position: relative;
-  border-radius: 1rem;
-  height: 1rem;
-  width: 100%;
-  background: var(--color-05);
-
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
-}
-
-@keyframes animate {
-  100% {
-    transform: scaleX(1);
-  }
-}
-
-.bar .progress-line span {
-  position: absolute;
-  border-radius: 1rem;
-  height: 100%;
+.skills {
   background: var(--color-04);
-
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
-}
-
-.progress-line.php span {
-  width: 50%;
-}
-
-.progress-line.scripcase span {
-  width: 80%;
-}
-
-.progress-line.html span {
-  width: 75%;
-}
-.progress-line.css span {
-  width: 65%;
-}
-
-.progress-line.javascript span {
-  width: 55%;
-}
-
-.progress-line.mysql span {
-  width: 60%;
-}
-
-.progress-line.jquery span {
-  width: 30%;
-}
-
-.bar .progress-line span::before {
-  position: absolute;
-  content: '';
-  right: 0;
-  top: -1rem;
-  height: 0;
-  width: 0;
-  border: 0.7rem solid transparent;
-  border-bottom-width: 0;
-  border-right-width: 0;
-  border-top-color: var(--color-04);
-}
-
-.bar .progress-line span::after {
-  position: absolute;
-  right: 0;
-  top: -2.8rem;
-  color: var(--color-02);
-  font-size: 1.2rem;
-  font-weight: 500;
-  background: var(--color-04);
-  padding: 0.1rem 0.8rem;
-  border-radius: 0.3rem;
-}
-
-.progress-line.php span::after {
-  content: '50%';
-}
-
-.progress-line.scripcase span::after {
-  content: '80%';
-}
-.progress-line.html span::after {
-  content: '75%';
-}
-.progress-line.css span::after {
-  content: '65%';
-}
-.progress-line.javascript span::after {
-  content: '55%';
-}
-
-.progress-line.mysql span::after {
-  content: '60%';
-}
-
-.progress-line.jquery span::after {
-  content: '30%';
-}
-/*FIM DAS CONFIGURAÇÕES DO MAPA DAS SKILSS****************************************/
-
-.services {
-  background: var(--color-04);
-  color: var(--color-04);
-}
-
-.services .title {
   color: var(--color-02);
 }
 
-.services .title::after {
-  content: 'Competências';
+.skills .title::after {
+  content: 'Conhecimentos';
   background: none;
   color: var(--color-02);
 }
 
-.services .serv-content .card .box img {
-  width: 50px;
-  height: 50px;
+.skills .skills-content .card .box img {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 2.5rem;
 }
 
-.services .serv-content .card {
-  width: calc(33% - 20px);
+.skills .skills-content .card {
+  /*width: calc(50% - 10px);*/
+  width: 100%;
+  /*height: 150px;*/
+
   background: var(--color-02);
-  text-align: center;
+  color: var(--color-04);
   border-radius: 0.6rem;
-  padding: 2rem 2.5rem;
   cursor: pointer;
+
+  padding: 2rem 2.5rem;
   margin-bottom: 0.5rem;
 }
-/*FIM DAS SKILLS****************************************/
 
-/*INICIO DA RESPONSIVIDADE*************************************/
+.skills .skills-content .card .box {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.skills .skills-content .card .box .box-p {
+  display: flex;
+  flex-direction: column;
+
+  margin: 1.5rem;
+}
+
+.skills .skills-content .card .box .box-p .text {
+  font-weight: 500;
+  font-size: 1.8rem;
+
+  border-bottom: solid 0.1rem var(--color-04);
+}
+
+.skills .skills-content .card .box .box-p p {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+/*FIM DAS SKILLS*/
+
+/*INICIO DAS PROJETOS*/
+
+/*FIM DAS PROJETOS*/
+
+/*INICIO DA RESPONSIVIDADE*/
 @media (max-width: 1300px) {
   .navbar .max-width {
     margin-left: 0;
@@ -518,6 +422,25 @@ section .title::after {
 }
 
 @media (max-width: 700px) {
+  section .title {
+    font-size: 2rem;
+  }
+
+  .skills .skills-content .card .box {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .max-width {
+    padding: 0 3rem;
+  }
+
+  .skills .skills-content .card .box .box-p .text {
+    text-align: center;
+  }
+
   .home .home-content .text-2 {
     font-size: 3rem;
   }
@@ -562,4 +485,4 @@ section .title::after {
     font-size: 2rem;
   }
 }
-/*FIM DA RESPONSIVIDADE*************************************/
+/*FIM DA RESPONSIVIDADE*/
