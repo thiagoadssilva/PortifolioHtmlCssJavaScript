@@ -8,3 +8,12 @@ $(document).ready(function () {
     }
   })
 })
+
+/** Evento do click do menu quando mobile */
+let menuBtn = document.querySelector('.menu-btn')
+let itemsMenu = document.querySelector('.menu')
+
+menuBtn.addEventListener('click', () => {
+  itemsMenu.classList.toggle('active')
+  console.log('entrou')
+})
