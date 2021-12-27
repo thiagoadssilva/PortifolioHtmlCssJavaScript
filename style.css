@@ -343,6 +343,12 @@ section .title::after {
   content: 'Projetos';
 }
 
+.projects .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .projects .carousel .card {
   background: var(--color-04);
   border-radius: 0.6rem;
