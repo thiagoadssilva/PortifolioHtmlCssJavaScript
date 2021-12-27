@@ -340,13 +340,12 @@ section .title::after {
 
 /*INICIO DAS PROJETOS*/
 .projects .title::after {
-  content: 'Projetos';
+  content: 'Desenvolvidos e Publicados';
 }
 
-.projects .card {
-  display: flex;
-  align-items: center;
+.projects .carousel {
   justify-content: center;
+  align-items: center;
 }
 
 .projects .carousel .card {
@@ -354,7 +353,10 @@ section .title::after {
   border-radius: 0.6rem;
   padding: 2.5rem 3.5rem;
 
+  text-align: center;
   color: var(--color-02);
+
+  transition: all 0.3s ease;
 }
 
 .projects .carousel .card img {
@@ -363,7 +365,13 @@ section .title::after {
   object-fit: cover;
 
   border-radius: 50%;
-  border: 0.5rem solid var(--color-05);
+  border: 0.2rem solid var(--color-05);
+
+  transition: all 0.3s ease;
+}
+
+.projects .carousel .card img:hover {
+  background: var(--color-02);
 }
 
 .projects .carousel .card .box {
@@ -371,7 +379,44 @@ section .title::after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  transition: all 0.3s ease;
 }
+
+.projects .carousel .card:hover .box {
+  transform: scale(1.05);
+}
+
+.owl-carousel {
+  display: block;
+}
+
+.projects .carousel .card .text {
+  font-size: 2.1rem;
+  font-weight: 500;
+  margin: 1rem 0 0.7rem 0;
+}
+
+.owl-dots {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.owl-dot {
+  width: 1.4rem;
+  height: 1.4rem;
+  outline: none !important;
+  border-radius: 50%;
+  border: solid 0.2rem var(--color-04) !important;
+
+  transition: all 0.3s ease;
+}
+
+.owl-dot.active {
+  width: 3.5rem;
+  border-radius: 1.5rem;
+}
+
 /*FIM DAS PROJETOS*/
 
 /*INICIO DA RESPONSIVIDADE*/
