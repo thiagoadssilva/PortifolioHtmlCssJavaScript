@@ -7,6 +7,7 @@
   --color-04: #000;
   --color-05: #f0f0f0;
   --color-06: #6665ee;
+  --color-07: #333;
 }
 
 html {
@@ -340,7 +341,7 @@ section .title::after {
 
 /*INICIO DAS PROJETOS*/
 .projects .title::after {
-  content: 'Desenvolvidos e Publicados';
+  content: 'Click para entrar';
 }
 
 .projects .carousel {
@@ -419,6 +420,129 @@ section .title::after {
 
 /*FIM DAS PROJETOS*/
 
+/*INICIO DAS CONTATOS*/
+.contact-title {
+  color: var(--color-05);
+}
+
+.contact {
+  background: var(--color-04);
+}
+
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--color-05);
+}
+.contact .contact-content .column {
+  width: calc(50% - 30px);
+  margin-right: 2rem;
+}
+
+.contact .contact-content .left p {
+  text-align: justify;
+}
+
+.contact .contact-content .text {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.contact .contact-content .left .icons {
+  margin: 1rem 0;
+}
+
+.contact .contact-content .row {
+  display: flex;
+  height: 6.5rem;
+  align-items: center;
+}
+
+.contact .contact-content .row .info .head {
+  font-weight: 500;
+}
+
+.contact .contact-content .row .info {
+  margin-left: 3rem;
+}
+
+.contact .contact-content .row ion-icon {
+  font-size: 2.5rem;
+}
+
+.contact .right {
+  margin-left: 5rem;
+}
+
+.contact .right form .fields {
+  display: flex;
+}
+
+.contact .right form .fields,
+.contact .right form .fields .field {
+  width: 100%;
+  height: 4.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact .right form .fields input,
+.contact .right form .textarea textarea {
+  width: 100%;
+  height: 100%;
+  border: 0.1rem solid var(--color-05);
+  border-radius: 0.6rem;
+  outline: none;
+  padding: 0 1.5rem;
+  font-size: 1.7rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.contact .right form .name {
+  margin-right: 1rem;
+}
+
+.contact .right form .email {
+  margin-left: 1rem;
+}
+
+.contact .right form .textarea {
+  width: 100%;
+  height: 8rem;
+}
+
+.textarea {
+  margin-bottom: 1rem;
+}
+
+.contact .right form .button {
+  width: 170px;
+  height: 4.7rem;
+}
+
+.contact .right form .button button {
+  width: 100%;
+  height: 100%;
+  border: 0.2rem solid var(--color-05);
+  background: var(--color-02);
+  color: var(--color-04);
+  font-size: 2rem;
+  font-weight: 500;
+  border-radius: 0.6rem;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.contact .right form .button button:hover {
+  color: var(--color-02);
+  background: none;
+}
+
+/*FIM DAS CONTATOS*/
+
 /*INICIO DA RESPONSIVIDADE*/
 @media (max-width: 1300px) {
   .navbar .max-width {
@@ -481,6 +605,20 @@ section .title::after {
 }
 
 @media (max-width: 850px) {
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .contact .contact-content .column {
+    width: calc(100% - 30px);
+    margin-left: 0;
+  }
+
+  .contact .contact-content .left .icons {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .about .about-content .left img {
     width: 300px;
     height: 300px;
